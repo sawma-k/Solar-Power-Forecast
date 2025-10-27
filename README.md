@@ -35,7 +35,7 @@ This project follows a 4-step data science workflow.
     * **Redundant Features:** `clearsky_ghi` (less accurate than actual `ghi`).
     * **Weak Features:** `albedo` (no correlation).
 * **Final Features:** The model was trained on `ghi`, `dhi`, `dni`, `air_temp`, `relative_humidity`, and `cloud_opacity`.
-
+![Features correlation](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/Correlation_MWh.png)
 ### 3. Model Training and Comparison
 
 * **Scaled Features:** Used `StandardScaler` on all features (`X`) to normalize their scales.
@@ -43,17 +43,7 @@ This project follows a 4-step data science workflow.
 * **Compared 6 Models:** Built, trained, and evaluated six different regression models to find the best performer.
 * **Selected Champion Model:** The **Tuned Random Forest** was the clear winner.
 
-### 4. Productionalized Prediction Pipeline
 
-* **Saved Tools:** The champion model (`.pkl`), the `StandardScaler` (`.pkl`), and the feature order (`.json`) were all saved.
-* **Built Prediction Script:** The final script (`03_prediction.py`) automatically:
-    1.  Loads the saved model, scaler, and column list.
-    2.  Calls the Solcast API for a live 24-hour weather forecast.
-    3.  Performs all necessary data and timezone transformations.
-    4.  Scales the forecast data and generates the hourly MWh predictions.
-    5.  Saves the final forecast to `solar_forecast_next_24_hours.csv`.
-
----
 
 ## 📊 Model Performance
 
@@ -70,5 +60,17 @@ The Tuned Random Forest was the best-performing model, demonstrating high accura
 
 ![Model Comparison Chart](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/model_performance_comparison.png)
 
+---
+
+### 4. Productionalized Prediction Pipeline
+
+* **Saved Tools:** The champion model (`.pkl`), the `StandardScaler` (`.pkl`), and the feature order (`.json`) were all saved.
+* **Built Prediction Script:** The final script (`03_prediction.py`) automatically:
+    1.  Loads the saved model, scaler, and column list.
+    2.  Calls the Solcast API for a live 24-hour weather forecast.
+    3.  Performs all necessary data and timezone transformations.
+    4.  Scales the forecast data and generates the hourly MWh predictions.
+    5.  Saves the final forecast to `solar_forecast_next_24_hours.csv`.
+![Model Prediction](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/prediction.png)
 ---
 
