@@ -68,7 +68,7 @@ The Tuned Random Forest was the best-performing model, demonstrating high accura
 | XGBoost (Default) | 0.8944 | 0.92 MWh | 1.90 MWh |
 | Tuned XGBoost | 0.9086 | 0.87 MWh | 1.77 MWh |
 
-![Model Comparison Chart](model_performance_comparison.png)
+![Model Comparison Chart](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/model_performance_comparison.png)
 
 ---
 
