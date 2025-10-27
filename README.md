@@ -35,7 +35,9 @@ This project follows a 4-step data science workflow.
     * **Redundant Features:** `clearsky_ghi` (less accurate than actual `ghi`).
     * **Weak Features:** `albedo` (no correlation).
 * **Final Features:** The model was trained on `ghi`, `dhi`, `dni`, `air_temp`, `relative_humidity`, and `cloud_opacity`.
-![Features correlation](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/Correlation_MWh.png)
+
+   ![Features correlation](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/Correlation_MWh.png)
+  
 ### 3. Model Training and Comparison
 
 * **Scaled Features:** Used `StandardScaler` on all features (`X`) to normalize their scales.
@@ -71,6 +73,8 @@ The Tuned Random Forest was the best-performing model, demonstrating high accura
     3.  Performs all necessary data and timezone transformations.
     4.  Scales the forecast data and generates the hourly MWh predictions.
     5.  Saves the final forecast to `solar_forecast_next_24_hours.csv`.
-![Model Prediction](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/prediction.png)
+
+   ![Model Prediction](https://github.com/sawma-k/Solar-Power-Forecast/blob/41f6d4eba948e4d7a83c085935a4da5da7538269/images/prediction.png)
+  
 ---
 
